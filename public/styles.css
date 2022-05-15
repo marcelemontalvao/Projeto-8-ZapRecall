@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fb6b6b;
+}
+
+.escondido {
+    display: none;
+}
+
+.medidas {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.boas-vindas > img {
+    width: 136px;
+    height: 161px;
+    margin-bottom: 16px;
+}
+
+
+.boas-vindas > p {
+  color: #ffffff;
+  font-family: 'Righteous';
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.boas-vindas button {
+    width: 246px;
+    height: 54px;
+    background-color: #ffffff;
+    border: 1px solid #D70900;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: 'Recursive';
+    color: #D70900;
+    cursor: pointer;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    margin-top: 42px ;
+}
+
+
+.perguntas > header > img {
+    width: 52px;
+    height: 60px;
+    margin-right: 18px;
+}
+
+.perguntas > header > span {
+    color: #ffffff;
+    font-family: 'Righteous';
+    font-size: 36px;}
+
+.pergunta {
+    width: 300px;
+    height: 65px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+}
+
+.pergunta > span {
+    margin-left: 15px;
+    font-family: "Recursive";
+    color: #333333;
+    font-weight: bold;
+}
+
+.pergunta > ion-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+}
+
+footer {
+    width: 100%;
+    height: 70px;
+    background-color: #ffffff;
+    position: absolute;
+    bottom: 0;
+}
+
+footer > p {
+    font-size: 18px;
+    font-family: 'Recursive';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    color: #333333;
+}
+
+.mostrar-pergunta {
+    width: 299px;
+    height: 131px;
+    background-color: #ffffd4;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.mostrar-pergunta p {
+    font-family: 'Recursive';
+    font-size: 18px;
+    color:#333333;
+    padding: 10px;
+    margin-top: 8px;
+    margin-left: 5px;
+}
+
+.mostrar-pergunta img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 6px;
+}
