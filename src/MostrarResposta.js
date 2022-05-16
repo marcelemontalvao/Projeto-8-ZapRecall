@@ -1,6 +1,5 @@
 import React from "react"
 
-
 export default function MostrarResposta(props) {
     const [marcador, setMarcador] = React.useState( <div className="mostrar-pergunta">
                 <p>{props.resposta}</p>
@@ -10,8 +9,7 @@ export default function MostrarResposta(props) {
                     <button className="zap" onClick={Green}>Zap!</button>
                 </div>
             </div> )
-   
-    
+
 function Red() {
     return (
         setMarcador(
