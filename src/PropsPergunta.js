@@ -8,7 +8,7 @@ export default function PropsPergunta(props) {
                 <div className="pergunta" onClick={() => {setPergunta(true)} } >
                     <span>Pergunta {props.numero + 1}</span>
                     <ion-icon name="play-outline"  /> 
-                </div> : <MostrarPergunta pergunta={props.perguntas.Title} resposta={props.perguntas.Answer} numero={props.numero +1} />
+                </div> : <MostrarPergunta pergunta={props.perguntas.Title} resposta={props.perguntas.Answer} numero={props.numero +1} contador={props.contador} setContador={props.setContador} />
             }
         </>
     )

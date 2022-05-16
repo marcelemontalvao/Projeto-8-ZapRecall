@@ -1,7 +1,8 @@
 import React from "react"
 
 export default function MostrarResposta(props) {
-    const [marcador, setMarcador] = React.useState( <div className="mostrar-pergunta">
+    const [marcador, setMarcador] = React.useState(
+        <div className="mostrar-pergunta">
                 <p>{props.resposta}</p>
                 <div className="botoes">
                     <button className="nao" onClick={Red} >Não lembrei</button>
@@ -11,6 +12,7 @@ export default function MostrarResposta(props) {
             </div> )
 
 function Red() {
+    props.setContador(props.contador + 1)
     return (
         setMarcador(
             <div className="pergunta"  >
@@ -22,6 +24,7 @@ function Red() {
 }
 
 function Orange() {
+    props.setContador(props.contador + 1)
     return (
         setMarcador(
             <div className="pergunta" >
@@ -33,6 +36,7 @@ function Orange() {
 }
 
 function Green() {
+    props.setContador(props.contador + 1)
     return (
         setMarcador(
             <div className="pergunta">
@@ -45,7 +49,6 @@ function Green() {
 return (
         <>
         {marcador}
-
         </>
     )
 }

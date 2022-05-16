@@ -2,6 +2,8 @@ import React from "react"
 import PropsPergunta from "./PropsPergunta"
 
 export default function Perguntas() {
+    const [icone,setIcone] = React.useState([])
+    const [contador, setContador] = React.useState(0)
     const objQuestion = [
         {
             Title: 'O que é JSX?' ,
@@ -36,10 +38,10 @@ export default function Perguntas() {
                     <span>ZapRecall</span>
                 </header>
                <div className="margin">
-                 {objQuestion.map((pergunta,index) => <PropsPergunta perguntas={pergunta} key={index} numero={index} />)}
+                 {objQuestion.map((pergunta,index) => <PropsPergunta perguntas={pergunta} key={index} numero={index} contador={contador} setContador={setContador}  />)}
                </div>
                <footer>
-                    <p>O/4 CONCLUIDOS</p>
+                    <p>{contador}/{objQuestion.length} CONCLUIDOS</p>
                </footer>
             </div>
         </>

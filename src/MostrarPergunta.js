@@ -9,7 +9,7 @@ export default function MostrarPergunta(props) {
                 <div className="mostrar-pergunta">
                     <p>{props.pergunta}</p>
                     <img src={"/assets/setinha.png"} alt="setinha" onClick={() => setResposta(true)}/>
-                </div> : <MostrarResposta resposta={props.resposta} numero={props.numero} /> 
+                </div> : <MostrarResposta resposta={props.resposta} numero={props.numero} contador={props.contador} setContador={props.setContador} /> 
            }
         </>
     )    
