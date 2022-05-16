@@ -1,39 +1,16 @@
 import React from "react"
+import MostrarResposta from "./MostrarResposta"
 
 export default function MostrarPergunta(props) {
-    // const objQuestion = [
-    //     {
-    //         Title: 'O que é JSX?' ,
-    //         Answer: 'Uma extensão de linguagem do JavaScript'},
-    //     {
-    //         Title: 'O React é __',
-    //         Answer: 'uma biblioteca JavaScript para construção de interfaces'},
-    //     {
-    //         Title: 'Componentes devem iniciar com __',
-    //         Answer: 'letra maiúscula'},
-    //     {
-    //         Title: 'O ReactDOM nos ajuda __ ',
-    //         Answer: 'interagindo com a DOM para colocar componentes React na mesma'},
-    //     {
-    //         Title: 'Usamos o npm para __ ',
-    //         Answer: 'gerenciar os pacotes necessários e suas dependências'},
-    //     {
-    //         Title: 'Podemos colocar __ dentro do JSX',
-    //         Answer: 'expressões'},
-    //     {
-    //         Title: 'Usamos props para __',
-    //         Answer: 'passar diferentes informações para componentes '},
-    //     {
-    //         Title: 'Usamos estado (state) para __',
-    //         Answer: 'dizer para o React quais informações quando atualizadas devem renderizar a tela novamente'},
-    // ]
-
+    const [resposta, setResposta] = React.useState(false)
     return (
-    
-        <div className="mostrar-pergunta">
-            <p>{props.pergunta.Title}</p>
-            <img src={process.env.PUBLIC_URL + "/assets/setinha.png"} alt="setinha" />
-        </div>
-       
+        <>
+           { resposta === false ?
+                <div className="mostrar-pergunta">
+                    <p>{props.pergunta}</p>
+                    <img src={"/assets/setinha.png"} alt="setinha" onClick={() => setResposta(true)}/>
+                </div> : <MostrarResposta resposta={props.resposta} numero={props.numero} /> 
+           }
+        </>
     )    
 }

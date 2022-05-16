@@ -1,47 +1,54 @@
-//  import React from "react"
+import React from "react"
 
-//  function Pergunta (props) {
-//      return (
-//          <>
-//              <p>{props.pergunta.Title}</p>
-//              <img src={process.env.PUBLIC_URL + "/assets/setinha.png"} alt="setinha" />
-//          </>
-//      )
-//  }
 
-//  export default function MostrarPergunta() {
-//      const objQuestion = [
-//          {
-//              Title: 'O que é JSX?' ,
-//              Answer: 'Uma extensão de linguagem do JavaScript'},
-//          {
-//              Title: 'O React é __',
-//              Answer: 'uma biblioteca JavaScript para construção de interfaces'},
-//          {
-//              Title: 'Componentes devem iniciar com __',
-//              Answer: 'letra maiúscula'},
-//          {
-//              Title: 'O ReactDOM nos ajuda __ ',
-//              Answer: 'interagindo com a DOM para colocar componentes React na mesma'},
-//          {
-//              Title: 'Usamos o npm para __ ',
-//              Answer: 'gerenciar os pacotes necessários e suas dependências'},
-//          {
-//              Title: 'Podemos colocar __ dentro do JSX',
-//              Answer: 'expressões'},
-//          {
-//              Title: 'Usamos props para __',
-//              Answer: 'passar diferentes informações para componentes '},
-//          {
-//              Title: 'Usamos estado (state) para __',
-//              Answer: 'dizer para o React quais informações quando atualizadas devem renderizar a tela novamente'},
-//      ]
+export default function MostrarResposta(props) {
+    const [marcador, setMarcador] = React.useState( <div className="mostrar-pergunta">
+                <p>{props.resposta}</p>
+                <div className="botoes">
+                    <button className="nao" onClick={Red} >Não lembrei</button>
+                    <button className="quase" onClick={Orange}>Quase não lembrei</button>
+                    <button className="zap" onClick={Green}>Zap!</button>
+                </div>
+            </div> )
+   
+    
+function Red() {
+    return (
+        setMarcador(
+            <div className="pergunta"  >
+              <span className="font-red">Pergunta {props.numero}</span>
+              <ion-icon style={{color: "red"}} name="close-circle"></ion-icon>
+            </div>
+          )
+    )
+}
 
-//      return (
-//          <>
-//              <div className="mostrar-pergunta">
-//                     {objQuestion.map(title => <Pergunta pergunta={title}/>)}
-//              </div>
-//          </>
-//      )    
-//  }
+function Orange() {
+    return (
+        setMarcador(
+            <div className="pergunta" >
+              <span className="font-orange">Pergunta {props.numero}</span>
+              <ion-icon style={{color: "orange"}} name="help-circle"></ion-icon>
+            </div>
+          )
+    )
+}
+
+function Green() {
+    return (
+        setMarcador(
+            <div className="pergunta">
+              <span className="font-green">Pergunta {props.numero}</span>
+              <ion-icon style={{color: "green"}} name="close-circle"></ion-icon>
+            </div>
+          )
+    )
+} 
+return (
+        <>
+        {marcador}
+
+        </>
+    )
+}
+

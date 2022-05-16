@@ -7,9 +7,9 @@ function PropsPergunta(props) {
         <>
             { pergunta === false ? 
                 <div className="pergunta" onClick={() => {setPergunta(true)} } >
-                    <span>Pergunta {}</span>
-                    <ion-icon name="play-outline"  />
-                </div> : <MostrarPergunta pergunta={props.Title} />
+                    <span>Pergunta {props.numero + 1}</span>
+                    <ion-icon name="play-outline"  /> 
+                </div> : <MostrarPergunta pergunta={props.perguntas.Title} resposta={props.perguntas.Answer} numero={props.numero +1} />
             }
         </>
     )
@@ -28,7 +28,19 @@ export default function Perguntas() {
             Answer: 'letra maiúscula'},
         {
             Title: 'O ReactDOM nos ajuda __ ',
-            Answer: 'interagindo com a DOM para colocar componentes React na mesma'}
+            Answer: 'interagindo com a DOM para colocar componentes React na mesma'},
+        {
+            Title: 'Usamos o npm para __ ',
+            Answer: 'gerenciar os pacotes necessários e suas dependêncisa'},
+        {
+            Title: 'Podemos colocar __ dentro do JSX',
+            Answer: 'expressões'},
+        {
+            Title: 'Usamos props para __',
+            Answer: 'passar diferentes informações para componentes '},
+        {
+            Title: 'Usamos estado (state) para __',
+            Answer: 'dizer para o React quais informações quando atualizadas devem renderizar a tela novamente'}
     ]
     return (
         <>
@@ -37,8 +49,8 @@ export default function Perguntas() {
                     <img src="/assets/logo-pequeno.png" alt="logo-pequeno" />
                     <span>ZapRecall</span>
                 </header>
-               <div>
-                 {objQuestion.map((pergunta,index) => <PropsPergunta numero={pergunta} key={index} />)}
+               <div className="margin">
+                 {objQuestion.map((pergunta,index) => <PropsPergunta perguntas={pergunta} key={index} numero={index} />)}
                </div>
                <footer>
                     <p>O/4 CONCLUIDOS</p>
