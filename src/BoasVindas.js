@@ -1,13 +1,14 @@
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom';
+import logo from '../src/assets/logo.png';
 
-export default function BoasVindas (props) {
+export default function BoasVindas(props) {
     return (
-        <div className="medidas boas-vindas">
-            <img src="/assets/logo.png" alt="logo" />
+        <div className='boas-vindas'>
+            <img src={logo} alt='logo' />
             <p>ZapRecall</p>
-            <Link to="/perguntas">
+            <Link to='/perguntas'>
                 <button>Iniciar Recall</button>
             </Link>
-       </div>
-    )
+        </div>
+    );
 }

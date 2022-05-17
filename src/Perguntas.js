@@ -1,49 +1,77 @@
-import React from "react"
-import PropsPergunta from "./PropsPergunta"
+import React from 'react';
+import Footer from './Footer';
+import PropsPergunta from './PropsPergunta';
+import logoPequeno from '../src/assets/logo-pequeno.png';
 
 export default function Perguntas() {
-    const [icone,setIcone] = React.useState([])
-    const [contador, setContador] = React.useState(0)
+    const [icones, setIcones] = React.useState([]);
+    const [contador, setContador] = React.useState(0);
+
     const objQuestion = [
         {
-            Title: 'O que é JSX?' ,
-            Answer: 'Uma extensão de linguagem do JavaScript'},
+            Title: 'O que é JSX?',
+            Answer: 'Uma extensão de linguagem do JavaScript',
+        },
         {
             Title: 'O React é __',
-            Answer: 'uma biblioteca JavaScript para construção de interfaces'},
+            Answer: 'uma biblioteca JavaScript para construção de interfaces',
+        },
         {
             Title: 'Componentes devem iniciar com __',
-            Answer: 'letra maiúscula'},
+            Answer: 'letra maiúscula',
+        },
         {
             Title: 'O ReactDOM nos ajuda __ ',
-            Answer: 'interagindo com a DOM para colocar componentes React na mesma'},
+            Answer: 'interagindo com a DOM para colocar componentes React na mesma',
+        },
         {
             Title: 'Usamos o npm para __ ',
-            Answer: 'gerenciar os pacotes necessários e suas dependêncisa'},
+            Answer: 'gerenciar os pacotes necessários e suas dependêncisa',
+        },
         {
             Title: 'Podemos colocar __ dentro do JSX',
-            Answer: 'expressões'},
+            Answer: 'expressões',
+        },
         {
             Title: 'Usamos props para __',
-            Answer: 'passar diferentes informações para componentes '},
+            Answer: 'passar diferentes informações para componentes ',
+        },
         {
             Title: 'Usamos estado (state) para __',
-            Answer: 'dizer para o React quais informações quando atualizadas devem renderizar a tela novamente'}
-    ]
+            Answer: 'dizer para o React quais informações quando atualizadas devem renderizar a tela novamente',
+        },
+    ].sort(randomize);
+
+    function randomize() {
+        return Math.random() - 0.5;
+    }
+
     return (
         <>
-            <div className="medidas perguntas">
+            <div className='medidas perguntas'>
                 <header>
-                    <img src="/assets/logo-pequeno.png" alt="logo-pequeno" />
+                    <img src={logoPequeno} alt='logo-pequeno' />
                     <span>ZapRecall</span>
                 </header>
-               <div className="margin">
-                 {objQuestion.map((pergunta,index) => <PropsPergunta perguntas={pergunta} key={index} numero={index} contador={contador} setContador={setContador}  />)}
-               </div>
-               <footer>
-                    <p>{contador}/{objQuestion.length} CONCLUIDOS</p>
-               </footer>
+                <div className='perguntas-container'>
+                    {objQuestion.map((pergunta, index) => (
+                        <PropsPergunta
+                            perguntas={pergunta}
+                            key={index}
+                            numero={index}
+                            contador={contador}
+                            setContador={setContador}
+                            icones={icones}
+                            setIcones={setIcones}
+                        />
+                    ))}
+                </div>
+                <Footer
+                    contador={contador}
+                    qtdePerguntas={objQuestion.length}
+                    icones={icones}
+                />
             </div>
         </>
-    )
+    );
 }
